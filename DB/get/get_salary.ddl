@@ -1,0 +1,1 @@
+SELECT Name, (Hours*ActivityCosts/100)*74.3 AS Salary FROM Employee INNER JOIN WorkPosition ON Employee.ID = WorkPosition.ID;
