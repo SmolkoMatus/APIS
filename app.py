@@ -1,5 +1,4 @@
-!pip install flask_cors
-!pip install mysql-connector-python
+
 from flask import Flask
 from flask import request
 from flask import jsonify
@@ -13,7 +12,7 @@ CORS(app)
 Employee = ["Peter"]
 
 @app.route("/GetEmployee", methods=["GET"])
-def employee():
+def employeeGet():
     with open ("DB/get/get_employee.ddl") as ddl_file:
         databaza = ddl_file.read()
     mydb = MYSQL.connect(host="147.232.40.14", user="sl267qr", passwd="boiLo6ah", database="sl267qr")
@@ -29,7 +28,7 @@ def employee():
     return jsonify(vysledok),200
 
 @app.route("/GetWorkposition", methods=["GET"])
-def employee():
+def workPositionGet():
     with open ("DB/get/get_workposition.ddl") as ddl_file:
         databaza = ddl_file.read()
     mydb = MYSQL.connect(host="147.232.40.14", user="sl267qr", passwd="boiLo6ah", database="sl267qr")
@@ -45,7 +44,7 @@ def employee():
     return jsonify(vysledok),200
 
 @app.route("/GetEmployment", methods=["GET"])
-def employee():
+def employmentGet():
     with open ("DB/get/get_employment.ddl") as ddl_file:
         databaza = ddl_file.read()
     mydb = MYSQL.connect(host="147.232.40.14", user="sl267qr", passwd="boiLo6ah", database="sl267qr")
@@ -61,7 +60,7 @@ def employee():
     return jsonify(vysledok),200
 
 @app.route("/GetPayment", methods=["GET"])
-def main():
+def paymentGet():
     with open ("DB/get/get_salary.ddl") as ddl_file:
         databaza = ddl_file.read()
     mydb = MYSQL.connect(host="147.232.40.14", user="sl267qr", passwd="boiLo6ah", database="sl267qr")
@@ -77,7 +76,7 @@ def main():
     return jsonify(vysledok),200
 
 @app.route("/CreateEmployee", methods=["POST"])
-def create():
+def createEmployee():
     data = request.get_json(force=True)
     employee_dict = dict(data)
     with open ("DB/create/create_employee.ddl") as ddl_file:
@@ -97,7 +96,7 @@ def create():
     return jsonify("created"),201
 
 @app.route("/CreateEmployment", methods=["POST"])
-def create():
+def createEmployment():
     data = request.get_json(force=True)
     employment_dict = dict(data)
     with open ("DB/create/create_employment.ddl") as ddl_file:
@@ -115,7 +114,7 @@ def create():
     return jsonify("created"),201
 
 @app.route("/CreateWorposition", methods=["POST"])
-def create():
+def createWorkPosition():
     data = request.get_json(force=True)
     workposition_dict = dict(data)
     with open ("DB/create/create_worposition.ddl") as ddl_file:
@@ -133,7 +132,7 @@ def create():
     return jsonify("created"),201
 
 @app.route("/UpdateEmployee/<id>", methods=["PUT"])
-def update(id):
+def updateEmployee(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
     id = data_dict("ID")
@@ -157,7 +156,7 @@ def update(id):
     return jsonify("updated"),201
 
 @app.route("/UpdateEmployment/<id>", methods=["PUT"])
-def update(id):
+def updateEmployment(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
     id = data_dict("ID", id)
@@ -177,7 +176,7 @@ def update(id):
     return jsonify("updated"),201
 
 @app.route("/UpdateWorkposition/<id>", methods=["PUT"])
-def update(id):
+def updateWorkPosition(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
     id = data_dict("ID", id)
@@ -197,7 +196,7 @@ def update(id):
     return jsonify("updated"),201
 
 @app.route("/DeleteEmployee/<id>", methods=["DELETE"])
-def delete(id):
+def deleteEmployee(id):
     with open ("DB/delete/delete_employee.ddl") as ddl_file:
         databaza = ddl_file.read()
     mydb = MYSQL.connect(host="147.232.40.14", user="sl267qr", passwd="boiLo6ah", database="sl267qr")
@@ -209,7 +208,7 @@ def delete(id):
     return jsonify("deleted"),204
 
 @app.route("/DeleteEmployment/<id>", methods=["DELETE"])
-def delete(id):
+def deleteEmployment(id):
     with open ("DB/delete/delete_employment.ddl") as ddl_file:
         databaza = ddl_file.read()
     mydb = MYSQL.connect(host="147.232.40.14", user="sl267qr", passwd="boiLo6ah", database="sl267qr")
@@ -221,7 +220,7 @@ def delete(id):
     return jsonify("deleted"),204
 
 @app.route("/DeleteWorkPosition/<id>", methods=["DELETE"])
-def delete(id):
+def deleteWorkPosition(id):
     with open ("DB/delete/delete_workposition.ddl") as ddl_file:
         databaza = ddl_file.read()
     mydb = MYSQL.connect(host="147.232.40.14", user="sl267qr", passwd="boiLo6ah", database="sl267qr")
