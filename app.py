@@ -116,7 +116,7 @@ def createW():
     result = cursor.fetchall()
     cursor.close()
     mydb.close()
-    return jsonify("created"),201
+    return jsonify(databaza),201
 
 @app.route("/UpdateEmployee/<id>", methods=["PUT"])
 def update(id):
