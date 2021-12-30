@@ -1,1 +1,1 @@
-INSERT INTO WorkPosition (ID, WorkPositionName, ActivityCosts) VALUES ("");
+INSERT INTO WorkPosition (WorkPositionName, ActivityCosts) VALUES ("{}","{}");

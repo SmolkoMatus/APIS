@@ -1,1 +1,1 @@
-INSERT INTO Employment (ID, AddressEmployment, EmailEmployment) VALUES ("");
+INSERT INTO Employment ( AddressEmployment, EmailEmployment) VALUES ("{}","{}");

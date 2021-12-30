@@ -1,1 +1,1 @@
-DELETE * FROM Employment where ID="";
+DELETE FROM Employment where ID='{}'

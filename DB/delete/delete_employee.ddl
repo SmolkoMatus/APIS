@@ -1,1 +1,1 @@
-DELETE * FROM Employee where ID="";
+DELETE FROM Employee where ID='{}'

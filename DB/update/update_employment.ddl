@@ -1,1 +1,1 @@
-UPDATE Employment set EmailEmployment='' where ID='';
+UPDATE Employment set AddressEmployment='{}', EmailEmployment='{}' where ID='{}'

@@ -1,1 +1,1 @@
-DELETE * FROM WorkPosition where ID="";
+DELETE FROM WorkPosition where ID='{}'

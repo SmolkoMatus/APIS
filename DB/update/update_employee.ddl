@@ -1,1 +1,1 @@
-UPDATE Employee set Hours='' where ID='';
+UPDATE Employee set Name='{}', Hours='{}',WorkPositionID='{}', EmploymentID='{}' where ID='{}'

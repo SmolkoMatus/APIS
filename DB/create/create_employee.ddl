@@ -1,1 +1,1 @@
-INSERT INTO Employee (ID, Name) VALUES ("");
+INSERT INTO Employee (Name, Hours, WorkPositionID,EmploymentID) VALUES ('{}','{}','{}','{}');
